@@ -7,4 +7,5 @@ app_name = "client"
 urlpatterns = [
 	path(" ", views.index),
 	path("index", views.index, name="index"),
+    path("prospect", views.prospect, name="prospect"),
 ]

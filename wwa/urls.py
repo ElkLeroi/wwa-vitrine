@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('client/', include("client.urls", namespace='client')),
 
-    path('', RedirectView.as_view(url='/client/index/', permanent=True)),
+    path('', RedirectView.as_view(url='/client/index', permanent=True)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
