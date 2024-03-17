@@ -15,6 +15,7 @@ class Prospect(models.Model):
     mail = models.CharField(max_length=100, unique=True)
     picture = models.ImageField(upload_to=prospect_pic)
     date = models.DateTimeField(null=True, blank=True)
+    sex = models.CharField(max_length=1, null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

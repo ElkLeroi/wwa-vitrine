@@ -10,21 +10,35 @@ from datetime import datetime
 def index(request):
 	return render(request, "client/index.html")
 
+# def status(request):
+# 	return render(request, "client/status.html")
+
 def prospect (request):
 	prenom = request.POST.get('prenom')
 	nom = request.POST.get('nom')
-	sex = request.POST.get('sexe')
+	sexe = request.POST.get('sexe')
 	tel = request.POST.get('tel')
 	email = request.POST.get('email')
 	photo = request.POST.get('picture')
-
 	try :
-		print("one ==========")
-		query_1 = Prospect.objects.filter(first_name=prenom, last_name=nom).first
-		print("twoo ==========")
-		return HttpResponse("L'utilisateur ", query_1, "existe déjà")
+
+		query_1 = Prospect.objects.filter(first_name=prenom, last_name=nom).first()
+
+		user = f"Le prospect {query_1} existe déjà."
+
+		if query_1 is not None:
 	
-	except :
+			context = {
+				"echec" : True,
+				"message" : user,
+			}
+	
+			return render(request, "client/status.html", context)
+		
+		else :
+			raise ValueError("query_1 is None")
+
+	except ValueError as e:
 		try :
 			today = datetime.now()
 			today = today.strftime("%Y-%m-%d %H:%M")
@@ -35,14 +49,32 @@ def prospect (request):
 				telephone = tel,
 				mail = email,
 				picture = photo,
-				date = today
+				date = today,
+				sex=sexe
 			)
-			print(prenom, nom, sex, tel, email, photo)
-			return HttpResponse("Successfully registred !")
+	
+			context = {
+				"success" : True,
+			}
+			return render(request, "client/status.html", context)
+		
 		except IntegrityError as e:
 			error_message = str(e)
+	
 			if 'tel' in error_message:
-				return HttpResponse("Tel number not unique")
-			if 'mail' in error_message:
-				return HttpResponse("Email not unique")
-	# return render(request, "client/index.html")
+				message = f"Le numero {tel} a déjà été utilisé."
+				context = {
+					"echec" : True,
+					"message" : message,
+				}
+				return render(request, "client/status.html", context)
+			
+			elif 'mail' in error_message:
+				message = f"L'adresse mail {email} a déjà été utilisé."
+				context = {
+					"echec" : True,
+					"message" : message,
+				}
+				return render(request, "client/status.html", context)
+				
+	return render(request, "client/status.html")

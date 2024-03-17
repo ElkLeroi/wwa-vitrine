@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+*
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.validate
+{
+  width: 50vw;
+  height: 50vh;
+}
+
+.status-btn
+{
+  background: orange;
+  border-radius: 5px;
+}
+
+a
+{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.error
+{
+  color: red;
+}
+
+
+@media screen and (min-width: 701px)
+{
+  .status-btn
+  {
+    width: 25vw;
+    margin-top: 5vh;
+  }
+
+  .card
+  {
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 0px 8px 5px 10px rgba(128, 128, 128, 0.3);
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh 10vw 8vh 7vw;
+  }
+}
+
+@media screen and (max-width: 700px)
+{
+  .validate
+  {
+    margin-top: -5vh;
+  }
+  .status-btn
+  {
+    width: 60vw;
+    background: orange;
+    border-radius: 5px;
+  }
+  
+  a
+  {
+    margin: 100px 5px 100px 5px;
+  }
+
+  .card
+  {
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 0px 8px 5px 10px rgba(128, 128, 128, 0.5);
+    width: 80vw;
+    height: 70vh;
+    margin: 10vh 10vw 10vh 7vw;
+    /* -webkit-box-shadow: 0 35px 20px #777; */
+    /* -moz-box-shadow: 0 35px 20px #777;
+    box-shadow: 0 35px 20px #777;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    -o-transform: rotate(-8deg);
+    -ms-transform: rotate(-8deg);
+    transform: rotate(-8deg); */
+  }
+}
