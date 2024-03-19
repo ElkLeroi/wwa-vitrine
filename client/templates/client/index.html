@@ -27,22 +27,33 @@
                     <!-- menu icon from ionicons.io -->
                     <ion-icon onclick="Menu(this)" class="text-amber-700" name="menu"></ion-icon>
                 </span>
-                <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 rounded-xl">
-                    <li class="mx-4 my-6 md:my-0 text-xl cursor-pointer text-black font-bold">wwa-boxtofly</li>
+                <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 rounded-xl menu">
+                    <!-- <li class="mx-4 my-6 md:my-0 text-xl cursor-pointer text-black font-bold">wwa-boxtofly</li> -->
                     <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href=""><h2>A Propos</h2></li></a>
-                    <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href=""><h2>Contact</h2></li></a>
+                    <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href="#footer"><h2>Contact</h2></li></a>
                 </ul>
             </div>
             <div class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full rounded:xl left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-                <button class="rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button>
+                <a class="btn-1 " href="#form">
+                    <button class="rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button>
+                </a>
             </div>                
         </nav>
+    </section>
+
+    <!-- responsive menu -->
+    <section id="menuR">
+        <ul>
+            <li><a href="#footer">Contacts</a></li>
+            <li><a href="#footer">a propos</a></li>
+            <li><a href="#form">s'enregistrer</a></li>
+        </ul>
     </section>
 
     <section>
         <div class="md:flex-col text-center gap-6 text-white">
             <!-- background image only on this section -->
-            <div  class="px-8 sticky -z-50" >
+            <div  class="px-8 sticky" id="sticky">
                 <!-- background-size: 2rem; -->
                 <!-- Text upon the background image -->
                 <h1 class="pt-20 text-5xl font-extrabold">Un Colis, Un voyage: <br> Un monde de voyage</h1>
@@ -53,11 +64,15 @@
                     un voyage, une histoire. Ensemble, rendons le monde plus petit, un colis  
                     à la fois.
                 </p>
-                <span><button class="mt-12 mb-24 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button></span>
+                <span>
+                    <a class="btn-1 " href="#form">
+                        <button class="mt-12 mb-24 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button>
+                    </a>
+                </span>
             </div>
         </div>
     </section>
-
+    
     <!-- FAQ -->
  
     <section class="px-12 relative+
@@ -65,7 +80,7 @@
         <!-- FAQ -->
         <div class="text-start container mx-auto">
             <h1 class="text-3xl font-bold pb-6 mt-5 text-center">F.A.Q</h1>
-            <ul class="list-disc mx-10 pb-3 text-justify">
+            <ul class="list-disc mx-10 pb-3 text-justify list-one">
                 <!-- Title and paragraph -->
                 <li>
                     <h2 class="font-bold text-lg text-cyan-700">Comment puis-je m'assurer que mon colis sera livré en tout sécurité ?</h2>
@@ -94,8 +109,8 @@
 
     <section class="relative flex">
         <!-- forms -->
-        <div class="text-center bg-orange-600 bg-gradient-to-b from-20% to-80% from-orange-100 mb-3 p-8 w-full rounded-lg">
-            <h1 class="-mt-4 text-6xl text-cyan-700 font-bold formTitle">S'enrégistrer</h1>            
+        <div class="text-center bg-orange-600 bg-gradient-to-b from-20% to-80% from-orange-100 mb-3 p-8 w-full rounded-lg" id="form">
+            <h1 class="-mt-4 text-3xl text-cyan-700 font-bold formTitle">S'enrégistrer</h1>            
             <form action="prospect" method="post" class="sm:px-48 mt-8 mb-3">
                 {% csrf_token %}
                 <div class="flex flex-col items-center lg:flex-wrap gap-4 mt-14">
@@ -129,17 +144,6 @@
         </div>
     </section>
 
-    <script>
-        function Menu(e){
-            let list = document.querySelector('ul')
-
-            e.name === 'menu' ? (
-                e.name = "close", list.classList.add('top-[80px]'), 
-                list.classList.add('opacity-100')
-            ) : (e.name = "menu", list.classList.remove('top-[80px]'), 
-                list.classList.remove('opacity-100')
-            )
-        }
-    </script>
+    
 </body>
 </html>

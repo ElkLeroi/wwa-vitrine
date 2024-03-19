@@ -1,3 +1,13 @@
+html
+{
+    scroll-behavior: smooth;
+}
+
+#menuR
+{
+    display: none;
+}
+
 .sticky
 {
     background-size: contain;
@@ -13,7 +23,7 @@
 
 .sticky > h1
 {
-    /* text-align: left; */
+    padding-top: 24vh;
     text-align: center;
 }
 
@@ -42,12 +52,15 @@
             url('../img/surface-x1gzqv-f7tw-unsplash.jpg'); 
         background-size: 90rem; 
         height: 90vh;
+        z-index: 2;
     }
 
     .sticky > h1
     {
         font-size: 40px;
         text-align: left;
+        padding-top: 10vh;
+        z-index: 4;
     }
 
     .sticky > p
@@ -57,12 +70,12 @@
         text-align: justify;
     }
 
-    ul > li
+    .list-one > li
     {
         margin-top: 3vh;
         margin-bottom: 2vh;
         width: 90vw;
-        margin-left: -16vw;
+        margin-left: -17vw;
         list-style-type: none;
     }
 
@@ -71,4 +84,33 @@
         text-align: center;
         margin-left: -3vw;
     }
+
+    #menuR
+    {
+        z-index: 50;
+        opacity: 1;
+        position: absolute;
+        display: none;
+        background-color: rgba(255, 255, 255,  1);
+        margin: 1vh 0vw 0vh 10vw;
+        border-radius: 15px;
+        /* margin-right: 10vw; */
+    }
+
+    #menuR > ul > li
+    {
+        padding: 20px;
+        border-bottom: 1px solid orange;
+        width: 80vw;
+        text-align: center;
+    }
+
+    #menuR > ul > li:last-child
+    {
+        border: none;
+        color: rgba(255, 255, 255,  1);
+        background: #ffa500;
+        border-radius: 0 0 15px 15px;
+    }
 }
+
