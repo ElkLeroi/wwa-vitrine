@@ -1,0 +1,74 @@
+.sticky
+{
+    background-size: contain;
+    background-position: left top;
+    background-image: 
+        linear-gradient(to right bottom, 
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0,  0.3)),
+        url('../img/surface-x1gzqv-f7tw-unsplash.jpg'); 
+    background-size: 90rem; 
+    height: 90vh;
+}
+
+.sticky > h1
+{
+    /* text-align: left; */
+    text-align: center;
+}
+
+.sticky > p
+{
+    width: 50vw;
+    margin-left: 24vw;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px)
+{
+    .headerText
+    {
+        text-align: justify;
+    }
+
+    .sticky
+    {
+        background-size: contain;
+        background-position: center top;
+        background-image: 
+            linear-gradient(to right bottom, 
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0,  0.3)),
+            url('../img/surface-x1gzqv-f7tw-unsplash.jpg'); 
+        background-size: 90rem; 
+        height: 90vh;
+    }
+
+    .sticky > h1
+    {
+        font-size: 40px;
+        text-align: left;
+    }
+
+    .sticky > p
+    {
+        width: 80vw;
+        margin-left: 0vw;
+        text-align: justify;
+    }
+
+    ul > li
+    {
+        margin-top: 3vh;
+        margin-bottom: 2vh;
+        width: 90vw;
+        margin-left: -16vw;
+        list-style-type: none;
+    }
+
+    .formTitle
+    {
+        text-align: center;
+        margin-left: -3vw;
+    }
+}

@@ -14,6 +14,7 @@ class Prospect(models.Model):
     telephone = models.PositiveBigIntegerField(unique=True)
     mail = models.CharField(max_length=100, unique=True)
     picture = models.ImageField(upload_to=prospect_pic)
+    frequency = models.PositiveBigIntegerField(default=0)
     date = models.DateTimeField(null=True, blank=True)
     sex = models.CharField(max_length=1, null=True, blank=True)
 

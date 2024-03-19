@@ -1,30 +1,145 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>wwa</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'client/assets/css/status.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'client/assets/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>wwa-boxtofly Acceuil</title>
+</head>
+<body class="bg-orange-100 font-[Poppins]">
+    <section>
+        <!-- Site Header -->
+        <nav class="p-5 py-2 px-4 bg-white w-full shadow md:flex md:items-center md:justify-between">
+            <!-- The navbar -->
+            <div class="flex justify-between items-center">
+                <span class="md:flex md:justify-between cursor-pointer to-white">
+                    <!-- site logo -->
+                    <a href="#"><img class="h-10 inline" src="{% static 'client/assets/img/logo-fondtransparent-1.png' %}" alt="Logo WWA Box to fly"></a>
+                </span>
+                <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                    <!-- menu icon from ionicons.io -->
+                    <ion-icon onclick="Menu(this)" class="text-amber-700" name="menu"></ion-icon>
+                </span>
+                <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 rounded-xl">
+                    <li class="mx-4 my-6 md:my-0 text-xl cursor-pointer text-black font-bold">wwa-boxtofly</li>
+                    <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href=""><h2>A Propos</h2></li></a>
+                    <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href=""><h2>Contact</h2></li></a>
+                </ul>
+            </div>
+            <div class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full rounded:xl left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+                <button class="rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button>
+            </div>                
+        </nav>
+    </section>
 
-    <body>
-        <h1>Django WWA project initialized</h1>
+    <section>
+        <div class="md:flex-col text-center gap-6 text-white">
+            <!-- background image only on this section -->
+            <div  class="px-8 sticky -z-50" >
+                <!-- background-size: 2rem; -->
+                <!-- Text upon the background image -->
+                <h1 class="pt-20 text-5xl font-extrabold">Un Colis, Un voyage: <br> Un monde de voyage</h1>
+                <p class="mt-8 text-1xl headerText">
+                    Chez WWA, nous faisons plus que transporter des colis.  Nous créons des
+                    liens, rapprochons les communautés et rendons le monde plus accessible. 
+                    En utilisant WWA, vous ne faites pas que partager un colis, vous partagez 
+                    un voyage, une histoire. Ensemble, rendons le monde plus petit, un colis  
+                    à la fois.
+                </p>
+                <span><button class="mt-12 mb-24 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button></span>
+            </div>
+        </div>
+    </section>
 
-        <form action="prospect" method="post">
-    
-            {% csrf_token %}
-        
-            <input type="text" name="nom" placeholder="nom" required>
-            <input type="text" name="prenom" placeholder="prénom" required>
-            <select name="sexe" id="sexe" required>
-                <option value="" disabled selected >sexe</option>
-                <option value="H">Homme</option >
-                <option value="F">Femme</option>
-            </select>
-            <input class="right" type="tel" id="tel" name="tel"  value=""  placeholder="Numero de telephone">
-            <input type="text" name="email" placeholder="email" >
-            <input type="file" name="picture" placeholder="piece d'identité" >
-            <input type="submit" value="Enrégistrer" > 
-             
-        </form>
-    </body>
+    <!-- FAQ -->
+ 
+    <section class="px-12 relative+
+     bg-orange-100">
+        <!-- FAQ -->
+        <div class="text-start container mx-auto">
+            <h1 class="text-3xl font-bold pb-6 mt-5 text-center">F.A.Q</h1>
+            <ul class="list-disc mx-10 pb-3 text-justify">
+                <!-- Title and paragraph -->
+                <li>
+                    <h2 class="font-bold text-lg text-cyan-700">Comment puis-je m'assurer que mon colis sera livré en tout sécurité ?</h2>
+                    <p>Nous comprenons vos préoccupations. Chez WWA, nous encourageons l’emballage soigneux de vos articles et nous vous recommandons de choisir des voyageurs bien notés pour assurer une livraison sécurisée.</p>
+                </li>
+                <li>
+                    <h2 class="font-bold text-lg text-cyan-700">Comment WWA vérifie-t-il les voyageurs qui transportent les colis ?</h2>
+                    <p>Nous avons un processus de vérification rigoureux qui inclut la vérification d’identité et des antécédents. Seuls les voyageurs vérifiés et fiables sont autorisés à transporter des colis.</p>
+                </li>
+                <li>
+                    <h2 class="font-bold text-lg text-cyan-700">Quels sont les frais associés à l'utilisation de WWA pour l'envoi de mon colis ?</h2>
+                    <p>Les frais varient en fonction du poids, de la taille du colis et de la distance de livraison. Notre système de devis transparent vous donnera un montant précis avant que vous confirmiez l'envoi.</p>
+                </li>
+                <li>
+                    <h2 class="font-bold text-lg text-cyan-700">Que se passe-t-il si mon colis est endommagé ou perdu pendant le voyage ?</h2>
+                    <p>Nous offrons une assurance supplémentaire pour les colis, plafonnée à 150 euros, en cas de dommages ou de pertes pendant le voyage. Votre satisfaction est notre priorité, et nous agirons rapidement pour résoudre tout problème</p>
+                </li>
+                <li class="mb-4">
+                    <h2 class="font-bold text-lg text-cyan-700">Quel type de colis puis-je envoyer avec WWA ? Y a-t-il des restrictions de taille, de poids ou de contenu ?</h2>
+                    <p>Nous acceptons une variété de colis, des petites enveloppes aux articles plus grands. Cependant, des restrictions de poids et de taille sont en place pour la sécurité des voyageurs. Consultez nos directives sur notre site pour plus d’informations.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="relative flex">
+        <!-- forms -->
+        <div class="text-center bg-orange-600 bg-gradient-to-b from-20% to-80% from-orange-100 mb-3 p-8 w-full rounded-lg">
+            <h1 class="-mt-4 text-6xl text-cyan-700 font-bold formTitle">S'enrégistrer</h1>            
+            <form action="prospect" method="post" class="sm:px-48 mt-8 mb-3">
+                {% csrf_token %}
+                <div class="flex flex-col items-center lg:flex-wrap gap-4 mt-14">
+                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="name" name="nom" placeholder="Nom" required>
+                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="email" id="email" name="email" placeholder="email">
+                </div>
+
+                <div class="">
+                    <div class="flex flex-col items-center lg:flex-wrap gap-4">
+                        <input class="hover:scale-105 shadow-xl w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="number" id="phone_number" name="tel" placeholder="Numéro de téléphone">
+                    </div>
+                    <div class="">
+                        <input class="hover:scale-105 shadow-xl mt-4 w-full placeholder-slate-400 border-b border-cyan-600 border-solid p-3 rounded-full" name="frequence" id="text-zone"  rows="2" placeholder="Frequence de voyage" type="number">
+                    </div>
+                    <div class="mt-5 mb-4 flex flex-col items-center">
+                        <div class="text-center">
+                            <select name="sexe" id="sexe" class="text-slate-500 p-3 px-10 rounded-full" required>
+                                <option value="" disabled selected >sexe</option>
+                                <option value="H">Homme</option >
+                                <option value="F">Femme</option>
+                            </select>
+                        </div>
+
+                        <span>   
+                            <input type="submit" value="Enrégistrer" class="shadow-xl mt-2 rounded-full px-6 py-4 font-bold hover:text-white bg-amber-500 hover:bg-cyan-600      hover:scale-105"> 
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function Menu(e){
+            let list = document.querySelector('ul')
+
+            e.name === 'menu' ? (
+                e.name = "close", list.classList.add('top-[80px]'), 
+                list.classList.add('opacity-100')
+            ) : (e.name = "menu", list.classList.remove('top-[80px]'), 
+                list.classList.remove('opacity-100')
+            )
+        }
+    </script>
+</body>
 </html>

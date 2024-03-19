@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>wwa</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <h1>Django WWA project initialized</h1>
+
+        <form action="prospect" method="post">
+    
+            {% csrf_token %}
+        
+            <input type="text" name="nom" placeholder="nom" required>
+            <input type="text" name="prenom" placeholder="prénom" required>
+            <select name="sexe" id="sexe" required>
+                <option value="" disabled selected >sexe</option>
+                <option value="H">Homme</option >
+                <option value="F">Femme</option>
+            </select>
+            <input class="right" type="tel" id="tel" name="tel"  value=""  placeholder="Numero de telephone">
+            <input type="text" name="email" placeholder="email" >
+            <input type="file" name="picture" placeholder="piece d'identité" >
+            <input type="submit" value="Enrégistrer" > 
+             
+        </form>
+    </body>
+</html>

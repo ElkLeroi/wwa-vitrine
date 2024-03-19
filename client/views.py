@@ -20,6 +20,7 @@ def prospect (request):
 	tel = request.POST.get('tel')
 	email = request.POST.get('email')
 	photo = request.POST.get('picture')
+	frequence = request.POST.get('frequence')
 	try :
 
 		query_1 = Prospect.objects.filter(first_name=prenom, last_name=nom).first()
@@ -50,7 +51,8 @@ def prospect (request):
 				mail = email,
 				picture = photo,
 				date = today,
-				sex=sexe
+				sex=sexe,
+				frequency = frequence
 			)
 	
 			context = {
