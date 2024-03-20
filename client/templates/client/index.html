@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'client/assets/css/status.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'client/assets/css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'client/assets/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -111,10 +113,10 @@
         <!-- forms -->
         <div class="text-center bg-orange-600 bg-gradient-to-b from-20% to-80% from-orange-100 mb-3 p-8 w-full rounded-lg" id="form">
             <h1 class="-mt-4 text-3xl text-cyan-700 font-bold formTitle">S'enrégistrer</h1>            
-            <form action="prospect" method="post" class="sm:px-48 mt-8 mb-3">
+            <form action="prospect" method="post" class="sm:px-48 mt-8 mb-3" id="prospec-form">
                 {% csrf_token %}
                 <div class="flex flex-col items-center lg:flex-wrap gap-4 mt-14">
-                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="name" name="nom" placeholder="Nom" required>
+                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="nom" name="nom" placeholder="Nom" required>
                     <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="prenom" name="prenom" placeholder="Prénom" required>
                     <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="email" id="email" name="email" placeholder="email">
                 </div>
@@ -124,7 +126,7 @@
                         <input class="hover:scale-105 shadow-xl w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="number" id="phone_number" name="tel" placeholder="Numéro de téléphone">
                     </div>
                     <div class="">
-                        <input class="hover:scale-105 shadow-xl mt-4 w-full placeholder-slate-400 border-b border-cyan-600 border-solid p-3 rounded-full" name="frequence" id="text-zone"  rows="2" placeholder="Frequence de voyage" type="number">
+                        <input class="hover:scale-105 shadow-xl mt-4 w-full placeholder-slate-400 border-b border-cyan-600 border-solid p-3 rounded-full" name="frequence" id="frequency"  rows="2" placeholder="Frequence de voyage" type="number">
                     </div>
                     <div class="mt-5 mb-4 flex flex-col items-center">
                         <div class="text-center">
@@ -140,10 +142,14 @@
                         </span>
                     </div>
                 </div>
+                <center>
+                    <p id="error_message"> </p>
+                </center>
             </form>
         </div>
     </section>
 
+    <script src="{% static 'client/assets/js/home.Js' %}"></script>
     
 </body>
 </html>
