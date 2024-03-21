@@ -9,21 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'client/assets/css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static 'client/assets/img/logo-fondtransparent-1.png' %}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>wwa-boxtofly Acceuil</title>
 </head>
 <body class="bg-orange-100 font-[Poppins]">
-    <section>
+    <section id="header">
         <!-- Site Header -->
         <nav class="p-5 py-2 px-4 bg-white w-full shadow md:flex md:items-center md:justify-between">
             <!-- The navbar -->
             <div class="flex justify-between items-center">
                 <span class="md:flex md:justify-between cursor-pointer to-white">
                     <!-- site logo -->
-                    <a href="#"><img class="h-10 inline" src="{% static 'client/assets/img/logo-fondtransparent-1.png' %}" alt="Logo WWA Box to fly"></a>
+                    <a href="#"><img class="h-12 inline" src="{% static 'client/assets/img/logo-fondtransparent-1.png' %}" alt="Logo WWA Box to fly"></a>
                 </span>
                 <span class="text-3xl cursor-pointer mx-2 md:hidden block">
                     <!-- menu icon from ionicons.io -->
@@ -31,13 +36,16 @@
                 </span>
                 <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 rounded-xl menu">
                     <!-- <li class="mx-4 my-6 md:my-0 text-xl cursor-pointer text-black font-bold">wwa-boxtofly</li> -->
-                    <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href=""><h2>A Propos</h2></li></a>
+                    <li class="mx-4 my-6 md:my-0 text-xl cursor-pointer text-black font-bold">
+                        <span class="text-amber-600">WIN</span> <span class="text-pink-900">WIN</span> <span class="text-amber-600">FOR</span> <span class="text-cyan-700">AFRICA</span>
+                    </li>
+                    <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href="#faq"><h2>A Propos</h2></li></a>
                     <li class="mx-4 my-6 md:my-0 hover:font-bold hover:underline decoration-2 hover:decoration-amber-500"><a href="#footer"><h2>Contact</h2></li></a>
                 </ul>
             </div>
             <div class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full rounded:xl left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
                 <a class="btn-1 " href="#form">
-                    <button class="rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button>
+                    <button class="rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enregistrer</button>
                 </a>
             </div>                
         </nav>
@@ -47,7 +55,7 @@
     <section id="menuR">
         <ul>
             <li><a href="#footer">Contacts</a></li>
-            <li><a href="#footer">a propos</a></li>
+            <li><a href="#faq">a propos</a></li>
             <li><a href="#form">s'enregistrer</a></li>
         </ul>
     </section>
@@ -58,17 +66,16 @@
             <div  class="px-8 sticky" id="sticky">
                 <!-- background-size: 2rem; -->
                 <!-- Text upon the background image -->
-                <h1 class="pt-20 text-5xl font-extrabold">Un Colis, Un voyage: <br> Un monde de voyage</h1>
-                <p class="mt-8 text-1xl headerText">
-                    Chez WWA, nous faisons plus que transporter des colis.  Nous créons des
-                    liens, rapprochons les communautés et rendons le monde plus accessible. 
-                    En utilisant WWA, vous ne faites pas que partager un colis, vous partagez 
-                    un voyage, une histoire. Ensemble, rendons le monde plus petit, un colis  
-                    à la fois.
+                <h1 class="pt-20 text-5xl font-extrabold" data-aos="fade-right">Partagez, Voyagez, Connectez</h1>
+                <p class="mt-8 text-1xl headerText" data-aos="fade-left">
+                    <!-- <span data-aos="fade-right"> -->
+                    WWA Bienvenue chez vous ! Un voyage de prévu ?
+                    Un colis à envoyer? Nous vous mettons en relation.
+                <!-- </span> -->
                 </p>
                 <span>
                     <a class="btn-1 " href="#form">
-                        <button class="mt-12 mb-24 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enrégistrer</button>
+                        <button class="mt-12 mb-24 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enregistrer</button>
                     </a>
                 </span>
             </div>
@@ -78,10 +85,10 @@
     <!-- FAQ -->
  
     <section class="px-12 relative+
-     bg-orange-100">
+     bg-orange-100" id="faq">
         <!-- FAQ -->
         <div class="text-start container mx-auto">
-            <h1 class="text-3xl font-bold pb-6 mt-5 text-center">F.A.Q</h1>
+            <h1 class="text-3xl font-bold pb-6 mt-5 text-center" data-aos="fade-down">F.A.Q</h1>
             <ul class="list-disc mx-10 pb-3 text-justify list-one">
                 <!-- Title and paragraph -->
                 <li>
@@ -111,43 +118,81 @@
 
     <section class="relative flex">
         <!-- forms -->
-        <div class="text-center bg-orange-600 bg-gradient-to-b from-20% to-80% from-orange-100 mb-3 p-8 w-full rounded-lg" id="form">
-            <h1 class="-mt-4 text-3xl text-cyan-700 font-bold formTitle">S'enrégistrer</h1>            
+        <div class="text-center bg-orange-300 mb-3 p-8 w-full rounded-lg" id="form">
+            <h1 class="-mt-4 text-3xl text-cyan-700 font-bold formTitle" data-aos="fade-down">S'enregistrer</h1>            
             <form action="prospect" method="post" class="sm:px-48 mt-8 mb-3" id="prospec-form">
                 {% csrf_token %}
-                <div class="flex flex-col items-center lg:flex-wrap gap-4 mt-14">
-                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="nom" name="nom" placeholder="Nom" required>
-                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="email" id="email" name="email" placeholder="email">
+                <div class="flex twoo twoo-first">
+                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="nom" name="nom" placeholder="Nom" data-aos="fade-right" required>
+                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="prenom" name="prenom" placeholder="Prénom" data-aos="fade-left" required>
                 </div>
 
-                <div class="">
-                    <div class="flex flex-col items-center lg:flex-wrap gap-4">
-                        <input class="hover:scale-105 shadow-xl w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="number" id="phone_number" name="tel" placeholder="Numéro de téléphone">
-                    </div>
-                    <div class="">
-                        <input class="hover:scale-105 shadow-xl mt-4 w-full placeholder-slate-400 border-b border-cyan-600 border-solid p-3 rounded-full" name="frequence" id="frequency"  rows="2" placeholder="Frequence de voyage" type="number">
-                    </div>
-                    <div class="mt-5 mb-4 flex flex-col items-center">
-                        <div class="text-center">
-                            <select name="sexe" id="sexe" class="text-slate-500 p-3 px-10 rounded-full" required>
-                                <option value="" disabled selected >sexe</option>
-                                <option value="H">Homme</option >
-                                <option value="F">Femme</option>
-                            </select>
-                        </div>
-
-                        <span>   
-                            <input type="submit" value="Enrégistrer" class="shadow-xl mt-2 rounded-full px-6 py-4 font-bold hover:text-white bg-amber-500 hover:bg-cyan-600      hover:scale-105"> 
-                        </span>
-                    </div>
+                <!-- <div class=""> flex-col items-center lg:flex-wrap gap-4-->
+                <div class="flex  twoo twoo-second" data-aos="fade-left">
+                    <input class="hover:scale-105 shadow-xl w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="number" id="phone_number" name="tel" placeholder="Numéro de téléphone" data-aos="fade-right">
+                    <input class="hover:scale-105 shadow-xl w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="email" id="email" name="email" placeholder="email" data-aos="fade-left">
                 </div>
+                <div class="twoo twoo-last" data-aos="fade-right">
+                    <input class="hover:scale-105 shadow-xl mt-4 w-full placeholder-slate-400 border-b border-cyan-600 border-solid p-3 rounded-full" name="frequence" id="frequency"  rows="2" placeholder="Frequence de voyage" type="number" data-aos="fade-right">
+                    <!-- <div class="text-center"> -->
+                    <select name="sexe" id="sexe" class="text-slate-500 mt-4 p-3 px-10 rounded-full" data-aos="fade-left" required>
+                        <option value="" disabled selected >sexe</option>
+                        <option value="H">Homme</option >
+                        <option value="F">Femme</option>
+                    </select>
+                    <!-- </div> -->
+                </div>
+                <div class="mt-5 mb-4 flex flex-col items-center">
+                    <span class="submit" data-aos="fade-up">   
+                        <input type="submit" value="Enregistrer" class="shadow-2xl mt-2 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105 outline-button"> 
+                    </span>
+                </div>
+                <!-- </div> -->
                 <center>
                     <p id="error_message"> </p>
                 </center>
             </form>
         </div>
     </section>
+
+    
+    <footer class="-mt-4 footer text-white" id="footer" data-aos="fade-up">
+        <!-- footer of the site -->
+        <!-- <div class="relative h-screen bg-contain md:grid md:grid-cols-3 gap-3 px-32 bg-no-repeat contrast-150 text-end border-t-4" style="background-image: url(dist/images/fond-decran.png);"> -->
+        <div class="bg-self md:grid md:grid-cols-3 gap-3 p-10">
+
+            <!-- logo image on footer -->
+            <a href="#acceuil" id="footer"><img class="md:h-52" src="{% static 'client/assets/img/logo-winwinforafrica-blanc-1024x439.png' %}" alt="logo_in_footer"></a>
+            
+            <div class="mt-12 footer-center">
+                <h2 class="font-bold text-3xl text-center mb-3"><a href="#acceuil">En savoir plus</a></h2>
+                <!-- another form of navbar -->
+                <ul class="text-xl footerList">
+                    <li class="hover:text-orange-300"><a href="#header">Acceuil</a></li>
+                    <li class="hover:text-orange-300 middle"><a href="#faq">A propos</a></li>
+                    <li class="hover:text-orange-300"><a href="#form">S'enregistrer</a></li>
+                </ul>
+            </div>
+            
+            <div class="mt-12 text-center md:text-end">
+                <h2 class="font-bold text-3xl  mb-3"><a href="#acceuil">Win Win For Africa</a></h2>
+                <!-- for more informations about us -->
+                <ul class="text-xl font-bold ">
+                    <!-- <li><button class="px-4 py-3 rounded-full border-b border-2 text-white hover:bg-cyan-700 hover:scale-90">NOUS CONTACTER</button></li> -->
+                    <li class="hover:text-orange-300 fontSize12"><a href="mailto:contact@wwa-boxtofly.com">contact@wwa-boxtofly.com</a></li>
+                    <ul class="mt-4 flex justify-center mb-4 ll">
+                        <li class="text-white hover:scale-125"><a href="https://www.facebook.com/wwa.boxtofly" target="_blanc"><ion-icon class="text-4xl" name="logo-facebook"></ion-icon></a></li>
+                        <li class="text-white hover:scale-125"><a href="https://www.instagram.com/wwa.boxtofly/" target="_blanc"><ion-icon class="text-4xl" name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                </ul>
+            </div>
+
+        </div>
+        <div class="bg-self text-center -mt-12 Copyright">
+            <!-- <span>&copy Copyright boxtofly.com - Tous droits réservés WWA SARL R.C.S.503777286 Lomé-TOGO</span> -->
+            <span>&copy Copyright boxtofly.com - Tous droits réservés</span>
+        </div>
+    </footer>
 
     <script src="{% static 'client/assets/js/home.Js' %}"></script>
     

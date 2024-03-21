@@ -1,3 +1,9 @@
+// AOS init
+AOS.init({
+    duration: 1500,
+})
+
+
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -48,7 +54,16 @@ document.getElementById('prospec-form').addEventListener('submit', function(even
         if (isValidAlphabetInput(nom)) {
             console.log('Ce nom est valide:', nom);
             // go check names
-            checkEmail();
+            if (email === '') {
+                // No data provided in the phone number field
+                console.log("No data provided in the email field");
+                check_Phone();
+            } else {
+                // Data is provided in the phone number field
+                console.log("Data provided in the email field:", tel);
+                checkEmail();
+            }
+            
         } else {
             console.log('Invalid nom:', nom);
             error.innerHTML = "Ce nom n'est pas valid"
@@ -59,7 +74,15 @@ document.getElementById('prospec-form').addEventListener('submit', function(even
         if (isValidEmail(email)) {
             console.log('Email is valid:', email);
             // go check phone number
-            check_Phone();
+            if (tel === '') {
+                // No data provided in the phone number field
+                console.log("No data provided in the phone number field");
+                check_Frequency();
+            } else {
+                // Data is provided in the phone number field
+                console.log("Data provided in the phone number field:", tel);
+                check_Phone();
+            }
         } else {
             console.log('Invalid email:', email);
             error.innerHTML = "Adresse mail invalid"

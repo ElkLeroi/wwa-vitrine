@@ -3,6 +3,16 @@ html
     scroll-behavior: smooth;
 }
 
+input:focus, select:focus
+{
+    outline: none;
+}
+
+.bg-self
+{
+    background: rgba(51, 65, 85,  1);
+}
+
 #menuR
 {
     display: none;
@@ -21,21 +31,150 @@ html
     height: 90vh;
 }
 
+#sticky
+{
+    transition: ease 1.5s;
+    overflow-x: hidden;
+}
+
 .sticky > h1
 {
     padding-top: 24vh;
     text-align: center;
+    font-size: 75px;
 }
 
 .sticky > p
 {
-    width: 50vw;
-    margin-left: 24vw;
+    width: 70vw;
+    margin-left: 13vw;
     text-align: center;
+    font-size: 18px;
+}
+
+.footerList
+{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+    margin-left: 1vw;
+}
+
+.footerList > li
+{
+    padding: 1vh 0vw;
+    font-size: 18px;
+    flex: 33%;
+    /* border: none; */
+}
+
+.footer-center
+{
+    margin-left: 5vw;
+}
+
+.middle
+{
+    /* padding: 0vh 2vw; */
+    border-left: 1px solid rgba(255, 255, 255,  1);
+    border-right: 1px solid rgba(255, 255, 255,  1);
+}
+
+#faq
+{
+    overflow-y: hidden;
+}
+
+.twoo-first, .twoo-second, .twoo-last
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.twoo > input:first-child
+{
+    margin-right: 1vw;
+    flex: 50%;
+}
+
+.twoo > input:last-child
+{
+    margin-left: 1vw;
+    flex: 50%;
+}
+
+.twoo-last > input
+{
+    margin-right: 1vw;
+    flex: 50%;
+}
+
+.twoo-last > select
+{
+    margin-left: 1vw;
+    flex: 50%;
+}
+
+.ll
+{
+    text-align: right;
+    margin-left: 12vw;
+}
+
+footer img
+{
+    margin-top: 2vh;
+}
+
+.Copyright
+{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.formTitle
+{
+    padding: 5vh 0vw;
+}
+
+.submit
+{
+    padding: 4vh 0vw 3vh 0vw;
+}
+
+.outline-button
+{
+    border: 2px solid rgba(255, 255, 255,  0.7);
+}
+
+.footerList > li:first-child
+{
+    text-align: left;
+}
+
+.footerList > li:last-child
+{
+    text-align: right;
+}
+
+form div
+{
+    overflow-x: hidden;
 }
 
 @media screen and (max-width: 700px)
 {
+    .footerList > li:first-child
+    {
+        text-align: left;
+    }
+
+    .footerList > li:last-child
+    {
+        text-align: left;
+    }
+
     .headerText
     {
         text-align: justify;
@@ -67,7 +206,7 @@ html
     {
         width: 80vw;
         margin-left: 0vw;
-        text-align: justify;
+        text-align: left;
     }
 
     .list-one > li
@@ -83,6 +222,12 @@ html
     {
         text-align: center;
         margin-left: -3vw;
+        padding: 5vh 0vw 2vh 0vw;
+    }
+
+    .submit
+    {
+        padding: 4vh 0vw 2vh 0vw;
     }
 
     #menuR
@@ -112,5 +257,71 @@ html
         background: #ffa500;
         border-radius: 0 0 15px 15px;
     }
+
+    .twoo-first, .twoo-second
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .twoo-first > input, .twoo-second > input
+    {
+        margin: 1vh 0vw;
+    }
+
+    .twoo > input:first-child
+    {
+        margin-right: 0vw;
+        flex: 50%;
+    }
+
+    .twoo > input:last-child
+    {
+        margin-left: 0vw;
+        flex: 50%;
+    }
+
+    .footerList
+    {
+        flex-direction: column;
+        text-align: left;
+        width: 50vw;
+        margin-left: 20vw;
+        margin-top: 2vh;
+        /* border-left: 1px solid white; */
+    }
+
+    .middle
+    {
+        border: none;
+    }
+
+    .footerList > li
+    {
+        margin-top: 1vh;
+        list-style-type: disc;
+    }
+
+    .bg-self
+    {
+        font-size: 12px;
+    }
+
+    .fontSize12
+    {
+        font-size: 16px;
+    }
+    
+    .ll
+    {
+        margin-left: 0vw;
+    }
+
+    .Copyright
+    {
+        padding-bottom: 8vh;
+        padding-top: 5vh;
+    }
 }
 
+/* by ELk */
