@@ -71,7 +71,7 @@ input:focus, select:focus
 
 .footer-center
 {
-    margin-left: 5vw;
+    margin-left: 0vw;
 }
 
 .middle
@@ -129,8 +129,8 @@ footer img
 
 .Copyright
 {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 0vh;
+    padding-bottom: 5vh;
 }
 
 .formTitle
@@ -148,19 +148,9 @@ footer img
     border: 2px solid rgba(255, 255, 255,  0.7);
 }
 
-.footerList > li:first-child
+.footerList > li:first-child, .footerList > li:last-child
 {
-    text-align: left;
-}
-
-.footerList > li:last-child
-{
-    text-align: right;
-}
-
-form div
-{
-    overflow-x: hidden;
+    text-align: center;
 }
 
 @media screen and (max-width: 700px)
@@ -198,7 +188,7 @@ form div
     {
         font-size: 40px;
         text-align: left;
-        padding-top: 10vh;
+        padding-top: 15vh;
         z-index: 4;
     }
 
@@ -322,6 +312,101 @@ form div
         padding-bottom: 8vh;
         padding-top: 5vh;
     }
+
+    form div
+    {
+        overflow-x: hidden;
+    }
 }
 
-/* by ELk */
+@media screen and (max-width: 1024px) and (min-width: 701px)
+{
+    .twoo-first, .twoo-second
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .twoo-first > input, .twoo-second > input
+    {
+        margin: 1vh 0vw;
+    }
+
+    .twoo > input:first-child
+    {
+        margin-right: 0vw;
+        flex: 50%;
+    }
+
+    .twoo > input:last-child
+    {
+        margin-left: 0vw;
+        flex: 50%;
+    }
+
+    .footerList
+    {
+        flex-direction: column;
+        text-align: left;
+        width: 50vw;
+        margin-left: 10vw;
+        margin-top: 2vh;
+        /* bg-self */
+    }
+
+    .middle
+    {
+        border: none;
+    }
+
+    .footerList > li
+    {
+        margin-top: 1vh;
+        list-style-type: disc;
+    }
+
+    .footerList > li:first-child
+    {
+        text-align: left;
+    }
+
+    .footerList > li:last-child
+    {
+        text-align: left;
+    }
+
+    .bg-self
+    {
+        font-size: 12px;
+    }
+
+    .fontSize12
+    {
+        font-size: 16px;
+    }
+    
+    .ll
+    {
+        margin-left: 0vw;
+    }
+
+    .Copyright
+    {
+        padding-bottom: 8vh;
+        padding-top: 5vh;
+    }
+
+    .sticky
+    {
+        background-size: cover;
+        background-position: center;
+        height: 95vh;
+    }
+
+    .sticky > h1
+    {
+        margin-top: 12vh;
+    }
+}
+
+/* text-align */

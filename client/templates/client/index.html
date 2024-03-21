@@ -75,7 +75,7 @@
                 </p>
                 <span>
                     <a class="btn-1 " href="#form">
-                        <button class="mt-12 mb-24 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105">S'enregistrer</button>
+                        <button class="mt-12 mb-24 rounded-full px-6 py-4 font-bold text-white bg-amber-500 hover:bg-cyan-600 hover:scale-105" data-aos="zoom-in">S'enregistrer</button>
                     </a>
                 </span>
             </div>
@@ -123,17 +123,17 @@
             <form action="prospect" method="post" class="sm:px-48 mt-8 mb-3" id="prospec-form">
                 {% csrf_token %}
                 <div class="flex twoo twoo-first">
-                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="nom" name="nom" placeholder="Nom" data-aos="fade-right" required>
-                    <input class="hover:scale-105 shadow-xl -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="prenom" name="prenom" placeholder="Prénom" data-aos="fade-left" required>
+                    <input class="hover:scale-105 -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="nom" name="nom" placeholder="Nom" data-aos="fade-right" required>
+                    <input class="hover:scale-105 -mt-4 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full mb-4" type="text" id="prenom" name="prenom" placeholder="Prénom" data-aos="fade-left" required>
                 </div>
 
                 <!-- <div class=""> flex-col items-center lg:flex-wrap gap-4-->
-                <div class="flex  twoo twoo-second" data-aos="fade-left">
-                    <input class="hover:scale-105 shadow-xl w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="number" id="phone_number" name="tel" placeholder="Numéro de téléphone" data-aos="fade-right">
-                    <input class="hover:scale-105 shadow-xl w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="email" id="email" name="email" placeholder="email" data-aos="fade-left">
+                <div class="flex  twoo twoo-second">
+                    <input class="hover:scale-105 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="number" id="phone_number" name="tel" placeholder="Numéro de téléphone" data-aos="fade-right">
+                    <input class="hover:scale-105 w-full placeholder-slate-400 border border-b border-solid p-3 rounded-full" type="email" id="email" name="email" placeholder="email" data-aos="fade-left">
                 </div>
-                <div class="twoo twoo-last" data-aos="fade-right">
-                    <input class="hover:scale-105 shadow-xl mt-4 w-full placeholder-slate-400 border-b border-cyan-600 border-solid p-3 rounded-full" name="frequence" id="frequency"  rows="2" placeholder="Frequence de voyage" type="number" data-aos="fade-right">
+                <div class="twoo twoo-last">
+                    <input class="hover:scale-105 mt-4 w-full placeholder-slate-400 border-b border-cyan-600 border-solid p-3 rounded-full" name="frequence" id="frequency"  rows="2" placeholder="Frequence de voyage" type="number" data-aos="fade-right">
                     <!-- <div class="text-center"> -->
                     <select name="sexe" id="sexe" class="text-slate-500 mt-4 p-3 px-10 rounded-full" data-aos="fade-left" required>
                         <option value="" disabled selected >sexe</option>
@@ -162,9 +162,9 @@
         <div class="bg-self md:grid md:grid-cols-3 gap-3 p-10">
 
             <!-- logo image on footer -->
-            <a href="#acceuil" id="footer"><img class="md:h-52" src="{% static 'client/assets/img/logo-winwinforafrica-blanc-1024x439.png' %}" alt="logo_in_footer"></a>
+            <a href="#acceuil" id="footer"><img class="md:h-32" src="{% static 'client/assets/img/logo-winwinforafrica-blanc-1024x439.png' %}" alt="logo_in_footer"></a>
             
-            <div class="mt-12 footer-center">
+            <div class="mt-4 footer-center">
                 <h2 class="font-bold text-3xl text-center mb-3"><a href="#acceuil">En savoir plus</a></h2>
                 <!-- another form of navbar -->
                 <ul class="text-xl footerList">

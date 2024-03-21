@@ -10,7 +10,7 @@ function isValidEmail(email) {
 }
 
 function isValidAlphabetInput(input) {
-    const alphabetRegex = /^[a-zA-Z]{2,}$/;
+    const alphabetRegex = /^(?:[a-zA-Z\s-]\s*){2,}$/
     return alphabetRegex.test(input);
 }
 
@@ -41,73 +41,73 @@ document.getElementById('prospec-form').addEventListener('submit', function(even
     check_First_Name()
     function check_First_Name() {
         if (isValidAlphabetInput(prenom)) {
-            console.log('Ce prénom est valide:', prenom);
+            // console.log('Ce prénom est valide:', prenom);
             // go check names
             chec_Last_Name();
         } else {
-            console.log('prénom non valid:', prenom);
+            // console.log('prénom non valid:', prenom);
             error.innerHTML = "Ce prénom n'est pas valid"
         }
     }
 
     function chec_Last_Name() {
         if (isValidAlphabetInput(nom)) {
-            console.log('Ce nom est valide:', nom);
+            // console.log('Ce nom est valide:', nom);
             // go check names
             if (email === '') {
                 // No data provided in the phone number field
-                console.log("No data provided in the email field");
+                // console.log("No data provided in the email field");
                 check_Phone();
             } else {
                 // Data is provided in the phone number field
-                console.log("Data provided in the email field:", tel);
+                // console.log("Data provided in the email field:", tel);
                 checkEmail();
             }
             
         } else {
-            console.log('Invalid nom:', nom);
+            // console.log('Invalid nom:', nom);
             error.innerHTML = "Ce nom n'est pas valid"
         }
     }
 
     function checkEmail() {
         if (isValidEmail(email)) {
-            console.log('Email is valid:', email);
+            // console.log('Email is valid:', email);
             // go check phone number
             if (tel === '') {
                 // No data provided in the phone number field
-                console.log("No data provided in the phone number field");
+                // console.log("No data provided in the phone number field");
                 check_Frequency();
             } else {
                 // Data is provided in the phone number field
-                console.log("Data provided in the phone number field:", tel);
+                // console.log("Data provided in the phone number field:", tel);
                 check_Phone();
             }
         } else {
-            console.log('Invalid email:', email);
+            // console.log('Invalid email:', email);
             error.innerHTML = "Adresse mail invalid"
         }
     }
 
     function check_Phone() {
         if (isValidNumericInput(tel)) {
-            console.log('Numéro valid:', tel);
+            // console.log('Numéro valid:', tel);
             // go check phone number 
             check_Frequency();
         } else {
-            console.log('Numéro invalid:', tel);
+            // console.log('Numéro invalid:', tel);
             error.innerHTML = "Numéro de téléphone invalid"
         }
     }
 
     function check_Frequency() {
         if (isValidFrequencyInput(frequency)) {
-            console.log('Fréquence valide:', frequency);
+            // console.log('Fréquence valide:', frequency);
             // go check phone number
             // this.submit(); numericRegex
             document.getElementById('prospec-form').submit();
         } else {
-            console.log('Fréquence invalide:', frequency);
+            // console.log('Fréquence invalide:', frequency);
             error.innerHTML = "Adresse mail invalid"
         }
     }
